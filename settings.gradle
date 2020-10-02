@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'water'
-include 'bluewhale','krill'
+include 'bluewhale','krill','tropicalFish'

@@ -20,3 +20,10 @@ subprojects {
     }
 }
 
+configure(subprojects.findAll {it.name != 'tropicalFish'}) {
+    hello {
+        doLast {
+            println '- I love to spend time in the arctic waters.'
+        }
+    }
+}
