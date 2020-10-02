@@ -4,10 +4,18 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds
  */
-Closure cl = { task -> println "I'm $task.project.name" }
+allprojects {
+    task hello {
+        doLast { task ->
+            println "I'm $task.project.name"
+        }
+    }
+}
 
-task('hello').doLast(cl)
-
-project(':bluewhale') {
-    task('hello').doLast(cl)
+subprojects {
+    hello {
+        doLast {
+            println "- I depend on water"
+        }
+    }
 }
